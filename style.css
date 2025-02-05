@@ -13,57 +13,59 @@ body {
 .navbar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     position: absolute;
     top: 0;
     width: 100%;
-    padding: 15px;
-    justify-content: flex-start;
-    background-color: rgba(0, 0, 0, 0.2); 
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensures the navbar stays on top */
 }
 .logo {
     font-size: 1.5em;
     font-weight: bold;
 }
-.nav-links{
+.nav-links {
     display: flex;
-    margin-left: auto;
 }
-a{
+a {
     color: white;
     text-decoration: none;
-    font-size: 25px;
-    padding-right: 30px;
+    font-size: 1.2em;
     margin: 0 5px;
 }
- a:hover {
+a:hover {
     color: #f4a460;
 }
 
 .header-img {
     width: 100%;
-    height: 350px; /* Specified height */
-    object-fit: cover; /* Ensures the image covers the area without stretching */
+    height: 350px;
+    object-fit: cover;
     display: block;
 }
-.hero-text{
+.hero-text {
     position: absolute;
     color: white;
-    top: 30%;
-    left: 30%;
-    background-color: rgba(0, 0, 0, 0.1); 
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    background-color: rgba(0, 0, 0, 0);
+    padding: 15px;
+    border-radius: 10px;
 }
-.hero-text h1{
+.hero-text h1 {
     margin: 0;
-    font-size: 60px;
+    font-size: 2.5em;
 }
-p{
-    color:whitesmoke;
-    font-size: 30px;
+p {
+    color: whitesmoke;
+    font-size: 1.2em;
 }
-.btn-menu{
+.btn-menu {
     background-color: burlywood;
     color: white;
-    font-size: 15px;
+    font-size: 1em;
     height: 40px;
     border-radius: 8px;
     cursor: pointer;
@@ -71,6 +73,7 @@ p{
 .btn-menu:hover {
     background-color: #f4a460;
 }
+
 .menu {
     padding: 20px;
     background-color: #f7f3e9;
@@ -90,7 +93,7 @@ p{
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     padding: 20px;
     text-align: center;
-    box-shadow:inset
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .menu-item:hover {
     transform: translateY(-10px);
@@ -110,10 +113,12 @@ p{
     font-weight: bold;
     color: #6f4e37;
 }
+
 .about {
     padding: 40px;
     background-color: #f7f3e9;
 }
+
 .about-content {
     display: flex;
     align-items: center;
@@ -126,6 +131,7 @@ p{
     height: auto;
     border-radius: 10px;
 }
+
 .contact {
     padding: 20px;
     background-color: #f7f3e9;
@@ -144,7 +150,8 @@ p{
     color: #6f4e37;
 }
 
-.contact input, .contact textarea {
+.contact input,
+.contact textarea {
     width: 100%;
     max-width: 500px;
     padding: 10px;
@@ -173,5 +180,64 @@ p{
     color: white;
     text-align: center;
     padding: 10px;
-    font-size: 
+    font-size: 1.2em;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-links a {
+        font-size: 1em;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .hero-text p {
+        font-size: 1em;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-content img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+    }
+
+    .hero-text {
+        top: 60%;
+    }
+
+    .hero-text h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-text p {
+        font-size: 0.9em;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
 }
